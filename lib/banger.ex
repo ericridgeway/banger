@@ -14,8 +14,8 @@ defmodule Banger do
           {:ok, return} ->
             return
 
-          _ ->
-            raise("#{__MODULE__}.#{unquote(name)}! (bang version) requires :ok response")
+          error ->
+            raise("#{__MODULE__}.#{unquote(name)}! (bang version) requires :ok response. Instead got: #{inspect error}")
         end
       end
 
